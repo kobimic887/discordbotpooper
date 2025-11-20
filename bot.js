@@ -21,6 +21,10 @@ const commands = [
     .setName('igoshit')
     .setDescription('Replies with toilet paper emoji')
     .toJSON(),
+  new SlashCommandBuilder()
+    .setName('ht')
+    .setDescription('Sends Hybrid Theory album cover')
+    .toJSON(),
 ];
 
 const rest = new REST({ version: '10' }).setToken(TOKEN);
@@ -45,6 +49,10 @@ client.on('interactionCreate', async interaction => {
 
   if (interaction.commandName === 'igoshit') {
     await interaction.reply('🧻');
+  }
+
+  if (interaction.commandName === 'ht') {
+    await interaction.reply('https://cdn.discordapp.com/attachments/1441177908784926823/1441183530481750136/Linkin_Park_Hybrid_Theory_Album_Cover.png?ex=6920de41&is=691f8cc1&hm=8f43d17083772a097129c2e6958446940233b10cccbf8d9f39a8a9c994a051c8&');
   }
 });
 
